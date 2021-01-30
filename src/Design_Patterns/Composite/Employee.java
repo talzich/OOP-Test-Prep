@@ -1,6 +1,7 @@
 package Design_Patterns.Composite;
 
 /**
+ * @author tal.zichlinsky
  * This class represents the leaf part of the composite design pattern
  * It stores the data of a single employee and implements displayEmployee()
  * from the EmployeeComponent abstract class.
