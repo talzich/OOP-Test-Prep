@@ -5,6 +5,7 @@ class Tester implements Runnable{
     // This thread's "jurisdiction"
     private final int MIN;
     private final int MAX;
+    static boolean flag = false;
 
     // Length of sought password
     private final int LENGTH;
@@ -20,10 +21,12 @@ class Tester implements Runnable{
      * @return - the password, if found. "Error" otherwise.
      */
     private String findPass(){
-        for (int i = MIN; i < MAX; i++) {
+        for (int i = MIN; i < MAX && !flag; i++) {
             String testThis = getStringfromInt(i, LENGTH);
-            if(Q2.testPass(testThis))
+            if(Q2.testPass(testThis)) {
+                flag = true;
                 return testThis;
+            }
         }
         return "Error";
     }
@@ -48,7 +51,7 @@ class Tester implements Runnable{
 
 public class Q2 {
 
-    private static final String pass = "84924042";
+    private static final String pass = "00000000";
 
     public static boolean testPass(String s){
         return (s.equals(pass));
