@@ -19,7 +19,7 @@ public class Firm {
         this.departments = new ArrayList<>();
         this.employees = new ArrayList<>();
     }
-    
+
     public void addDepartment(String department){
         this.departments.add(department);
     }
